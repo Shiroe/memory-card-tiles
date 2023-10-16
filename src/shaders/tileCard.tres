@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bdsq3ewlcv35a"]
+
+[ext_resource type="Shader" path="res://src/shaders/tileCard.gdshader" id="1_nix2r"]
+
+[resource]
+shader = ExtResource("1_nix2r")
+shader_parameter/reveal_progress = 0.0
+shader_parameter/scale = Vector2(10, 10)
+shader_parameter/seamless = false

@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://bj28lffx1pm6"]
+
+[ext_resource type="Texture2D" uid="uid://ir8bsey0e7v" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/sky_fc.png" id="1_jmmaq"]
+[ext_resource type="Texture2D" uid="uid://drejl7xd3kfmd" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/far_mountains_fc.png" id="2_huy4d"]
+[ext_resource type="Texture2D" uid="uid://dk0t7nesxfgeb" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/grassy_mountains_fc.png" id="3_3l5en"]
+[ext_resource type="Texture2D" uid="uid://c38emg5cq4aqn" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_mid_t_fc.png" id="4_8w35e"]
+[ext_resource type="Texture2D" uid="uid://g5jkwmggu2et" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_mid_fc.png" id="5_g12wb"]
+[ext_resource type="Texture2D" uid="uid://dv7uxqbal34s2" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/hill.png" id="6_jx0yk"]
+[ext_resource type="Texture2D" uid="uid://dtnrexhu6w5h7" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_front_fc.png" id="7_uxw1t"]
+
+[sub_resource type="GDScript" id="GDScript_vt4xl"]
+script/source = "extends ParallaxBackground
+
+@export var scrolling_speed = 50
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	scroll_offset.x -= scrolling_speed * delta
+"
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = SubResource("GDScript_vt4xl")
+scrolling_speed = 150
+
+[node name="SkyFc" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("1_jmmaq")
+
+[node name="FarMountains" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1151, 0)
+
+[node name="FarMountainsFc" type="Sprite2D" parent="FarMountains"]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("2_huy4d")
+region_rect = Rect2(0, 0, 384.104, 216.025)
+
+[node name="GrassMountains" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1151, 0)
+
+[node name="GrassyMountainsFc" type="Sprite2D" parent="GrassMountains"]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("3_3l5en")
+
+[node name="FarClouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1151, 0)
+
+[node name="CloudsMidTFc" type="Sprite2D" parent="FarClouds"]
+visible = false
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("4_8w35e")
+
+[node name="CloudsMidFc" type="Sprite2D" parent="FarClouds"]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("5_g12wb")
+
+[node name="MiddleGround" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Hill" type="Sprite2D" parent="MiddleGround"]
+position = Vector2(576, 322)
+scale = Vector2(3, 2.98148)
+texture = ExtResource("6_jx0yk")
+
+[node name="FrontClouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(1151, 0)
+
+[node name="CloudsFrontFc" type="Sprite2D" parent="FrontClouds"]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("7_uxw1t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false

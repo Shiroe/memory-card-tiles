@@ -1,0 +1,969 @@
+[gd_scene load_steps=193 format=3 uid="uid://cdm8g6yb0miqx"]
+
+[ext_resource type="Texture2D" uid="uid://b5hmhvrkgqlce" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetField.png" id="1_0gmss"]
+[ext_resource type="Texture2D" uid="uid://wgjygqimfk3r" path="res://NinjaAdventure/Backgrounds/Tilesets/Pipes.png" id="2_hnfvl"]
+[ext_resource type="Texture2D" uid="uid://bh7odcqxy3c66" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetDesert.png" id="3_01tff"]
+[ext_resource type="Texture2D" uid="uid://bvf2dnc34q2rr" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetDungeon.png" id="4_815ym"]
+[ext_resource type="Texture2D" uid="uid://b2ea8gjmtndyu" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetElement.png" id="5_myfmn"]
+[ext_resource type="Texture2D" uid="uid://bynxfwr4vo3jm" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloor.png" id="6_w72l2"]
+[ext_resource type="Texture2D" uid="uid://cfes3mg0df4sj" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloorB.png" id="7_kaim4"]
+[ext_resource type="Texture2D" uid="uid://cv5k5tig38vph" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetFloorDetail.png" id="8_5ptoa"]
+[ext_resource type="Texture2D" uid="uid://ct3fribcn1j2i" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetHole.png" id="9_up4eu"]
+[ext_resource type="Texture2D" uid="uid://bmdl4gefdeh1k" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetHouse.png" id="10_tucv6"]
+[ext_resource type="Texture2D" uid="uid://xor6nvp8fgr6" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetLogic.png" id="11_by17f"]
+[ext_resource type="Texture2D" uid="uid://cigop63t2y0ib" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetNature.png" id="12_5jv5b"]
+[ext_resource type="Texture2D" uid="uid://cuqsj837e4ptk" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetRelief.png" id="13_isuuu"]
+[ext_resource type="Texture2D" uid="uid://cx0d4das4uqgq" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetReliefDetail.png" id="14_4ogul"]
+[ext_resource type="Texture2D" uid="uid://lyg1amjdkces" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetVillageAbandoned.png" id="15_m6mxs"]
+[ext_resource type="Texture2D" uid="uid://1jfg7go6d4nd" path="res://NinjaAdventure/Backgrounds/Tilesets/TilesetWater.png" id="16_vinbd"]
+[ext_resource type="Texture2D" uid="uid://8hw4hgn58vkb" path="res://NinjaAdventure/Backgrounds/Tilesets/Interior/Elements.png" id="17_vitwj"]
+[ext_resource type="Texture2D" uid="uid://gfbgs68c124p" path="res://NinjaAdventure/Backgrounds/Tilesets/Interior/TilesetInterior.png" id="18_bh5xe"]
+[ext_resource type="Texture2D" uid="uid://b3wtns5va2yq8" path="res://NinjaAdventure/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="19_judms"]
+[ext_resource type="Texture2D" uid="uid://iys8tn5hqol7" path="res://NinjaAdventure/Backgrounds/Tilesets/Interior/TilesetWallSimple.png" id="20_o71ky"]
+[ext_resource type="Texture2D" uid="uid://btpi0i7xj1p0c" path="res://NinjaAdventure/Backgrounds/Vehicles/Boat.png" id="21_l4vk8"]
+[ext_resource type="Texture2D" uid="uid://24y4mar4uxod" path="res://NinjaAdventure/Backgrounds/Vehicles/Crane.png" id="22_c64y0"]
+[ext_resource type="Texture2D" uid="uid://ugfa3xnnk7ok" path="res://NinjaAdventure/Backgrounds/Vehicles/FishNet.png" id="23_g7kjc"]
+[ext_resource type="Texture2D" uid="uid://bd3f3w4ygte5u" path="res://NinjaAdventure/Backgrounds/Vehicles/FishNetFull.png" id="24_ypgoi"]
+[ext_resource type="Texture2D" uid="uid://cnp10lyur2tdf" path="res://NinjaAdventure/Backgrounds/Vehicles/Sail.png" id="25_s6tjj"]
+[ext_resource type="Texture2D" uid="uid://741x3icpkshp" path="res://NinjaAdventure/Actor/Characters/BlackNinjaMage/Faceset.png" id="26_flcqa"]
+[ext_resource type="Texture2D" uid="uid://lukagpe58p3w" path="res://NinjaAdventure/Actor/Characters/BlackNinjaMage/SpriteSheet.png" id="27_u567u"]
+[ext_resource type="Texture2D" uid="uid://b2wx6u4ixn4at" path="res://NinjaAdventure/Actor/Characters/BlackSorcerer/Faceset.png" id="28_wodhh"]
+[ext_resource type="Texture2D" uid="uid://bfdc7mlyv4jk7" path="res://NinjaAdventure/Actor/Characters/BlackSorcerer/SpriteSheet.png" id="29_ukwxj"]
+[ext_resource type="Texture2D" uid="uid://drx740feugvu7" path="res://NinjaAdventure/Actor/Characters/BlueNinja/SpriteSheet.png" id="30_oiflv"]
+[ext_resource type="Texture2D" uid="uid://cmkonlxkuglrx" path="res://NinjaAdventure/Actor/Characters/BlueNinja/Faceset.png" id="31_7m2r7"]
+[ext_resource type="Texture2D" uid="uid://h86bq1x5irbm" path="res://NinjaAdventure/Actor/Characters/BlueSamurai/Faceset.png" id="32_env0q"]
+[ext_resource type="Texture2D" uid="uid://b1ewvtasy7w7v" path="res://NinjaAdventure/Actor/Characters/BlueSamurai/SpriteSheet.png" id="33_vp2e4"]
+[ext_resource type="Texture2D" uid="uid://gmhx6f3n4boo" path="res://NinjaAdventure/Actor/Characters/Boy/SpriteSheet.png" id="34_5ic4v"]
+[ext_resource type="Texture2D" uid="uid://b0npoked2ja2k" path="res://NinjaAdventure/Actor/Characters/Boy/Faceset.png" id="35_di0f7"]
+[ext_resource type="Texture2D" uid="uid://dl7tkg0r1ox2b" path="res://NinjaAdventure/Actor/Characters/Cavegirl/SpriteSheet.png" id="36_qloab"]
+[ext_resource type="Texture2D" uid="uid://b32w836mitmto" path="res://NinjaAdventure/Actor/Characters/Cavegirl/Faceset.png" id="37_igpgc"]
+[ext_resource type="Texture2D" uid="uid://bn1bqnxv2kiyi" path="res://NinjaAdventure/Actor/Characters/Cavegirl2/SpriteSheet.png" id="38_e7g6p"]
+[ext_resource type="Texture2D" uid="uid://bebq38owig0ov" path="res://NinjaAdventure/Actor/Characters/Cavegirl2/Faceset.png" id="39_ukjfd"]
+[ext_resource type="Texture2D" uid="uid://bv040n5lqwvg1" path="res://NinjaAdventure/Actor/Characters/Caveman2/SpriteSheet.png" id="40_nnqyu"]
+[ext_resource type="Texture2D" uid="uid://bws2ymncnih7s" path="res://NinjaAdventure/Actor/Characters/Caveman2/Faceset.png" id="41_cjeai"]
+[ext_resource type="Texture2D" uid="uid://fx86kcxjcsvo" path="res://NinjaAdventure/Actor/Characters/Caveman/SpriteSheet.png" id="42_x8ipj"]
+[ext_resource type="Texture2D" uid="uid://cywhh72etvp1e" path="res://NinjaAdventure/Actor/Characters/Caveman/Faceset.png" id="43_dbqof"]
+[ext_resource type="Texture2D" uid="uid://drw2bturimj0j" path="res://NinjaAdventure/Actor/Characters/Child/SpriteSheet.png" id="44_7i4bk"]
+[ext_resource type="Texture2D" uid="uid://cokj6jcrq38kd" path="res://NinjaAdventure/Actor/Characters/Child/Faceset.png" id="45_x2hfp"]
+[ext_resource type="Texture2D" uid="uid://vbanpo6kjxqg" path="res://NinjaAdventure/Actor/Characters/DarkNinja/SpriteSheet.png" id="46_3j6nb"]
+[ext_resource type="Texture2D" uid="uid://js0ofuhlgf2t" path="res://NinjaAdventure/Actor/Characters/DarkNinja/Faceset.png" id="47_6i8op"]
+[ext_resource type="Texture2D" uid="uid://b8uqasr8aifbj" path="res://NinjaAdventure/Actor/Characters/EggBoy/SpriteSheet.png" id="48_wya7f"]
+[ext_resource type="Texture2D" uid="uid://1hgiakgu6pk2" path="res://NinjaAdventure/Actor/Characters/EggBoy/Faceset.png" id="49_p23a0"]
+[ext_resource type="Texture2D" uid="uid://dcbujfwvl2y66" path="res://NinjaAdventure/Actor/Characters/EggGirl/SpriteSheet.png" id="50_3srgr"]
+[ext_resource type="Texture2D" uid="uid://cevx0i03xmwi2" path="res://NinjaAdventure/Actor/Characters/EggGirl/Faceset.png" id="51_4b7ue"]
+[ext_resource type="Texture2D" uid="uid://q2rw6et5yxg2" path="res://NinjaAdventure/Actor/Characters/Eskimo/SpriteSheet.png" id="52_8b27a"]
+[ext_resource type="Texture2D" uid="uid://dxcemcl5021x2" path="res://NinjaAdventure/Actor/Characters/Eskimo/Faceset.png" id="53_ch1q7"]
+[ext_resource type="Texture2D" uid="uid://peuq5t1a0gvd" path="res://NinjaAdventure/Actor/Characters/EskimoNinja/SpriteSheet.png" id="54_61154"]
+[ext_resource type="Texture2D" uid="uid://4r1arfumipgf" path="res://NinjaAdventure/Actor/Characters/EskimoNinja/Faceset.png" id="55_dtnqi"]
+[ext_resource type="Texture2D" uid="uid://dw4hdiqwrv3n8" path="res://NinjaAdventure/Actor/Characters/GrayNinja/Faceset.png" id="56_ap5rg"]
+[ext_resource type="Texture2D" uid="uid://lc1r0lmryx2r" path="res://NinjaAdventure/Actor/Characters/GrayNinja/SpriteSheet.png" id="57_ykmux"]
+[ext_resource type="Texture2D" uid="uid://2gtfw3mripkj" path="res://NinjaAdventure/Actor/Characters/GreenCamouflage/SpriteSheet.png" id="58_c478j"]
+[ext_resource type="Texture2D" uid="uid://bcnymlsvfddom" path="res://NinjaAdventure/Actor/Characters/GreenCamouflage/Faceset.png" id="59_ya46p"]
+[ext_resource type="Texture2D" uid="uid://bx37asv56wr4w" path="res://NinjaAdventure/Actor/Characters/GreenDemon/Faceset.png" id="60_uxurw"]
+[ext_resource type="Texture2D" uid="uid://df4ne64rpf7wk" path="res://NinjaAdventure/Actor/Characters/GreenDemon/SpriteSheet.png" id="61_a6cn2"]
+[ext_resource type="Texture2D" uid="uid://bxco048yla4so" path="res://NinjaAdventure/Actor/Characters/Inspector/Faceset.png" id="62_l8s5o"]
+[ext_resource type="Texture2D" uid="uid://cw2eoo1tfwoy2" path="res://NinjaAdventure/Actor/Characters/Inspector/SpriteSheet.png" id="63_wkk2n"]
+[ext_resource type="Texture2D" uid="uid://cyw6s5oxq0mgg" path="res://NinjaAdventure/Actor/Characters/Knight/Faceset.png" id="64_is6na"]
+[ext_resource type="Texture2D" uid="uid://0u7o60ktgk7" path="res://NinjaAdventure/Actor/Characters/Knight/SpriteSheet.png" id="65_wcmq3"]
+[ext_resource type="Texture2D" uid="uid://d11m76o38mh8v" path="res://NinjaAdventure/Actor/Characters/Lion/Faceset.png" id="66_km5f2"]
+[ext_resource type="Texture2D" uid="uid://dug2n1rm16xhg" path="res://NinjaAdventure/Actor/Characters/Lion/SpriteSheet.png" id="67_vv1w3"]
+[ext_resource type="Texture2D" uid="uid://btfpfdy67i43x" path="res://NinjaAdventure/Actor/Characters/Monk/Faceset.png" id="68_3cyyc"]
+[ext_resource type="Texture2D" uid="uid://dy44axocppsm4" path="res://NinjaAdventure/Actor/Characters/Monk/SpriteSheet.png" id="69_iwg51"]
+[ext_resource type="Texture2D" uid="uid://buljjeunds3m3" path="res://NinjaAdventure/Actor/Characters/Princess/Faceset.png" id="70_26i4p"]
+[ext_resource type="Texture2D" uid="uid://sftbhdtmnn1s" path="res://NinjaAdventure/Actor/Characters/Princess/SpriteSheet.png" id="71_ng2p0"]
+[ext_resource type="Texture2D" uid="uid://cn26kp8adr1uk" path="res://NinjaAdventure/Actor/Characters/RedCamouflage/Faceset.png" id="72_s6hmt"]
+[ext_resource type="Texture2D" uid="uid://b5vmm804e1pr3" path="res://NinjaAdventure/Actor/Characters/RedCamouflage/SpriteSheet.png" id="73_tw2na"]
+[ext_resource type="Texture2D" uid="uid://bqrarva3ncafw" path="res://NinjaAdventure/Actor/Characters/RedDemon/Faceset.png" id="74_iieyd"]
+[ext_resource type="Texture2D" uid="uid://dh4rv2d3rxoxr" path="res://NinjaAdventure/Actor/Characters/RedDemon/SpriteSheet.png" id="75_v4rfw"]
+[ext_resource type="Texture2D" uid="uid://iff18pi7k2ka" path="res://NinjaAdventure/Actor/Characters/RedFighter/SpriteSheet.png" id="76_dsitq"]
+[ext_resource type="Texture2D" uid="uid://c45c5magxj3be" path="res://NinjaAdventure/Actor/Characters/RedFighter/Faceset.png" id="77_cx42u"]
+[ext_resource type="Texture2D" uid="uid://deo5vaablgxa2" path="res://NinjaAdventure/Actor/Characters/RedSamurai/Faceset.png" id="78_vql2v"]
+[ext_resource type="Texture2D" uid="uid://b4ol83cah3lrb" path="res://NinjaAdventure/Actor/Characters/RedSamurai/redsamurai.png" id="79_4wlpg"]
+[ext_resource type="Texture2D" uid="uid://cj6i14ckg747s" path="res://NinjaAdventure/Actor/Characters/Samurai/Faceset.png" id="80_cn40i"]
+[ext_resource type="Texture2D" uid="uid://bxuwdr6emi6u0" path="res://NinjaAdventure/Actor/Characters/Samurai/SpriteSheet.png" id="81_6in33"]
+[ext_resource type="Texture2D" uid="uid://crofwup1ht5x5" path="res://NinjaAdventure/Actor/Characters/Skeleton/Faceset.png" id="82_ds187"]
+[ext_resource type="Texture2D" uid="uid://dcgih0h1q3gwb" path="res://NinjaAdventure/Actor/Characters/Skeleton/SpriteSheet.png" id="83_31421"]
+[ext_resource type="Texture2D" uid="uid://dlckhswwqtxkt" path="res://NinjaAdventure/Actor/Characters/Spirit/Faceset.png" id="84_rovjf"]
+[ext_resource type="Texture2D" uid="uid://cq7hbaravxlm0" path="res://NinjaAdventure/Actor/Characters/Spirit/SpriteSheet.png" id="85_qd80v"]
+[ext_resource type="Texture2D" uid="uid://deovt8f6trdrn" path="res://NinjaAdventure/Actor/Characters/Villager/Faceset.png" id="86_ikjml"]
+[ext_resource type="Texture2D" uid="uid://cp1dbtm8c62x8" path="res://NinjaAdventure/Actor/Characters/Villager/SpriteSheet.png" id="87_svx5n"]
+[ext_resource type="Texture2D" uid="uid://mvp2ihsoqkk5" path="res://NinjaAdventure/Actor/Characters/WhiteFighter/Faceset.png" id="88_12n3x"]
+[ext_resource type="Texture2D" uid="uid://djfvhdf0xre7r" path="res://NinjaAdventure/Actor/Characters/WhiteFighter/SpriteSheet.png" id="89_snbnb"]
+[ext_resource type="Texture2D" uid="uid://b6q51ivtteisq" path="res://NinjaAdventure/Actor/Characters/Woman/SpriteSheet.png" id="90_voxl4"]
+[ext_resource type="Texture2D" uid="uid://bd3pv8xlgn5ot" path="res://NinjaAdventure/Actor/Characters/Woman/Faceset.png" id="91_qq0xu"]
+[ext_resource type="Texture2D" uid="uid://brxq0t65b61q1" path="res://NinjaAdventure/Actor/Characters/YellowNinja/Faceset.png" id="92_1j8fq"]
+[ext_resource type="Texture2D" uid="uid://bjid6hmy2rvah" path="res://NinjaAdventure/Actor/Characters/YellowNinja/SpriteSheet.png" id="93_a474e"]
+[ext_resource type="Texture2D" uid="uid://cv7kaiij6221k" path="res://NinjaAdventure/Actor/Boss/DemonCyclop/Faceset.png" id="94_tegmn"]
+[ext_resource type="Texture2D" uid="uid://6y7besfvore5" path="res://NinjaAdventure/Actor/Boss/DemonCyclop/Hit.png" id="95_rowvr"]
+[ext_resource type="Texture2D" uid="uid://b8ylwa1vssj5r" path="res://NinjaAdventure/Actor/Boss/DemonCyclop/Idle.png" id="96_qsx4w"]
+[ext_resource type="Texture2D" uid="uid://bakxt3yuno8il" path="res://NinjaAdventure/Actor/Boss/DemonCyclop/Sprite.png" id="97_pd64i"]
+[ext_resource type="Texture2D" uid="uid://dug5e45wtgved" path="res://NinjaAdventure/Actor/Boss/DemonCyclop/Walk.png" id="98_ab3cy"]
+[ext_resource type="Texture2D" uid="uid://cy4e8l8rxvm8f" path="res://NinjaAdventure/Actor/Boss/DemonCyclop2/Faceset.png" id="99_yqxi3"]
+[ext_resource type="Texture2D" uid="uid://clmgcws5xdf0c" path="res://NinjaAdventure/Actor/Boss/DemonCyclop2/Hit.png" id="100_ai2vo"]
+[ext_resource type="Texture2D" uid="uid://cxr63fsa4cjo7" path="res://NinjaAdventure/Actor/Boss/DemonCyclop2/Idle.png" id="101_l08fp"]
+[ext_resource type="Texture2D" uid="uid://dri4t7oektkot" path="res://NinjaAdventure/Actor/Boss/DemonCyclop2/Sprite.png" id="102_7g2ek"]
+[ext_resource type="Texture2D" uid="uid://ce627tvg17cx2" path="res://NinjaAdventure/Actor/Boss/DemonCyclop2/Walk.png" id="103_8bvcw"]
+[ext_resource type="Texture2D" uid="uid://yxonvhqs6yee" path="res://NinjaAdventure/Actor/Boss/GiantFlam/Faceset.png" id="104_t1f2u"]
+[ext_resource type="Texture2D" uid="uid://ckwr3r6ww7bu6" path="res://NinjaAdventure/Actor/Boss/GiantFlam/Hit.png" id="105_rfrpm"]
+[ext_resource type="Texture2D" uid="uid://bf5bbhwo1rmeu" path="res://NinjaAdventure/Actor/Boss/GiantFlam/Idle.png" id="106_hlcsn"]
+[ext_resource type="Texture2D" uid="uid://b8f5fow4mnsge" path="res://NinjaAdventure/Actor/Boss/GiantFrog/Attack.png" id="107_s3kgf"]
+[ext_resource type="Texture2D" uid="uid://cqjjn6t0m6vvf" path="res://NinjaAdventure/Actor/Boss/GiantFrog/Charge.png" id="108_w13vi"]
+[ext_resource type="Texture2D" uid="uid://c5ypgkedqxecl" path="res://NinjaAdventure/Actor/Boss/GiantFrog/Faceset.png" id="109_jg4j0"]
+[ext_resource type="Texture2D" uid="uid://dwqu2sl56lf43" path="res://NinjaAdventure/Actor/Boss/GiantFrog/Hit.png" id="110_m1kco"]
+[ext_resource type="Texture2D" uid="uid://j44nlpudtbkm" path="res://NinjaAdventure/Actor/Boss/GiantFrog/Idle40x40.png" id="111_vqfwv"]
+[ext_resource type="Texture2D" uid="uid://k5k46doc2hre" path="res://NinjaAdventure/Actor/Boss/GiantFrog/Jump.png" id="112_7ed2t"]
+[ext_resource type="Texture2D" uid="uid://7ynaw7575nc7" path="res://NinjaAdventure/Actor/Boss/GiantRacoon/Faceset.png" id="113_er0qq"]
+[ext_resource type="Texture2D" uid="uid://7f6eja6vpy41" path="res://NinjaAdventure/Actor/Boss/GiantRacoon/Idle.png" id="114_o3ht0"]
+[ext_resource type="Texture2D" uid="uid://d32vmgu6sqax" path="res://NinjaAdventure/Actor/Boss/GiantRacoon/Jump.png" id="115_kwyw4"]
+[ext_resource type="Texture2D" uid="uid://d32cqnc27n48b" path="res://NinjaAdventure/Actor/Boss/GiantRacoon/Sprite.png" id="116_k8sir"]
+[ext_resource type="Texture2D" uid="uid://dvmc2a3y7vvxj" path="res://NinjaAdventure/Actor/Boss/GiantRacoon/charge.png" id="117_hghvr"]
+[ext_resource type="Texture2D" uid="uid://duob8tcx2t3cv" path="res://NinjaAdventure/Actor/Boss/GiantRacoon/Attack.png" id="118_ujmet"]
+[ext_resource type="Texture2D" uid="uid://x50e7rjt5oca" path="res://NinjaAdventure/Actor/Boss/GiantSpirit/Idle.png" id="119_n06vr"]
+[ext_resource type="Texture2D" uid="uid://c80s0pmikdjv3" path="res://NinjaAdventure/Actor/Boss/GiantSpirit/Hit.png" id="120_3y5yf"]
+[ext_resource type="Texture2D" uid="uid://dds7fsaio3ceh" path="res://NinjaAdventure/Actor/Boss/GiantSpirit/Faceset.png" id="121_11gpn"]
+[ext_resource type="Texture2D" uid="uid://bqa7w6tfsefjq" path="res://NinjaAdventure/Actor/Monsters/Axolot/SpriteSheet.png" id="122_cwxkq"]
+[ext_resource type="Texture2D" uid="uid://bjgq3jmisov22" path="res://NinjaAdventure/Actor/Monsters/Axolot/Faceset.png" id="123_h156l"]
+[ext_resource type="Texture2D" uid="uid://ipqsa6rmdc0a" path="res://NinjaAdventure/Actor/Monsters/Cyclope/SpriteSheet.png" id="124_ree6d"]
+[ext_resource type="Texture2D" uid="uid://dqnjnpk4cpie6" path="res://NinjaAdventure/Actor/Monsters/Cyclope/Faceset.png" id="125_1qyka"]
+[ext_resource type="Texture2D" uid="uid://ckdcjrjejrfm3" path="res://NinjaAdventure/Actor/Monsters/Dragon/Faceset.png" id="126_rqy45"]
+[ext_resource type="Texture2D" uid="uid://bior24720vha8" path="res://NinjaAdventure/Actor/Monsters/Dragon/SpriteSheet.png" id="127_deu70"]
+[ext_resource type="Texture2D" uid="uid://bcwg6l4g28nfr" path="res://NinjaAdventure/Actor/Monsters/Eye2/Faceset.png" id="128_s7ld0"]
+[ext_resource type="Texture2D" uid="uid://greuyylgaxl7" path="res://NinjaAdventure/Actor/Monsters/Eye2/Eye2.png" id="129_ex4dc"]
+[ext_resource type="Texture2D" uid="uid://bcp434kkrtyqv" path="res://NinjaAdventure/Actor/Monsters/GoldRacoon/Faceset.png" id="130_ss1fi"]
+[ext_resource type="Texture2D" uid="uid://culsi3sai1aio" path="res://NinjaAdventure/Actor/Monsters/GoldRacoon/SpriteSheet.png" id="131_x2xpi"]
+[ext_resource type="Texture2D" uid="uid://d2l6hn08j7v5i" path="res://NinjaAdventure/Actor/Monsters/Mouse/SpriteSheet.png" id="132_ti4y2"]
+[ext_resource type="Texture2D" uid="uid://ceurfxymtv817" path="res://NinjaAdventure/Actor/Monsters/Mouse/Faceset.png" id="133_aty01"]
+[ext_resource type="Texture2D" uid="uid://dj2ubdfdmooe1" path="res://NinjaAdventure/Actor/Monsters/Slime4/Faceset.png" id="134_msfke"]
+[ext_resource type="Texture2D" uid="uid://w2p2rq8uvjgi" path="res://NinjaAdventure/Actor/Monsters/Slime4/Slime4.png" id="135_ks21x"]
+[ext_resource type="Texture2D" uid="uid://3ps7ubgempbf" path="res://NinjaAdventure/Actor/Monsters/Reptile/Reptile.png" id="136_ubp60"]
+[ext_resource type="Texture2D" uid="uid://c7aanbp48ygha" path="res://NinjaAdventure/Actor/Monsters/Reptile/Faceset.png" id="137_bo0j5"]
+[ext_resource type="Texture2D" uid="uid://cwy6731pksebr" path="res://NinjaAdventure/Actor/Monsters/Owl/Faceset.png" id="138_64jo6"]
+[ext_resource type="Texture2D" uid="uid://bdxfwxm05u03c" path="res://NinjaAdventure/Actor/Monsters/Owl/Owl.png" id="139_p6j06"]
+[ext_resource type="Texture2D" uid="uid://cnjcxgnwqrgva" path="res://NinjaAdventure/Actor/Monsters/Mushroom/Faceset.png" id="140_76kp4"]
+[ext_resource type="Texture2D" uid="uid://dxfhyeku4cxff" path="res://NinjaAdventure/Actor/Monsters/Mushroom/mushroom.png" id="141_p77nl"]
+[ext_resource type="Texture2D" uid="uid://dl6rapo3ooc4g" path="res://NinjaAdventure/Actor/Monsters/Mollusc/Faceset.png" id="142_hg0re"]
+[ext_resource type="Texture2D" uid="uid://c20qogk7ca6ti" path="res://NinjaAdventure/Actor/Monsters/Mollusc/Mollusc.png" id="143_7oxxi"]
+[ext_resource type="Texture2D" uid="uid://bbuw6mcexjfv5" path="res://NinjaAdventure/Actor/Monsters/Skull/Faceset.png" id="144_ljsr0"]
+[ext_resource type="Texture2D" uid="uid://b85utf15vju0h" path="res://NinjaAdventure/Actor/Monsters/Skull/SpriteSheet.png" id="145_frt75"]
+[ext_resource type="Texture2D" uid="uid://bkrr7mtvro8ek" path="res://NinjaAdventure/Actor/Monsters/SkullBlue/Faceset.png" id="146_v51xm"]
+[ext_resource type="Texture2D" uid="uid://b40odl1lfbv3p" path="res://NinjaAdventure/Actor/Monsters/SkullBlue/SpriteSheet.png" id="147_8o10g"]
+[ext_resource type="Texture2D" uid="uid://c1ph8o2r62fuu" path="res://NinjaAdventure/Actor/Monsters/Spirit2/Faceset.png" id="148_oe7y2"]
+[ext_resource type="Texture2D" uid="uid://b52w0vna4tdjy" path="res://NinjaAdventure/Actor/Monsters/Spirit2/SpriteSheet.png" id="149_bhbyi"]
+[ext_resource type="Texture2D" uid="uid://dfqtpr1r8wwn8" path="res://NinjaAdventure/HUD/Arrow.png" id="150_ns6yr"]
+[ext_resource type="Texture2D" uid="uid://bfqa36t0lkqp" path="res://NinjaAdventure/HUD/Heart.png" id="151_4gjwx"]
+[ext_resource type="Texture2D" uid="uid://wr0y5va6rj1u" path="res://NinjaAdventure/HUD/Kunai.png" id="152_huyqh"]
+[ext_resource type="Texture2D" uid="uid://on4g7n0jqohx" path="res://NinjaAdventure/HUD/LifeBarMiniProgress.png" id="153_m1r7s"]
+[ext_resource type="Texture2D" uid="uid://ddma4a6ab6qv5" path="res://NinjaAdventure/HUD/LifeBarMiniUnder.png" id="154_nursh"]
+[ext_resource type="Texture2D" uid="uid://c0cvrnrilkkns" path="res://NinjaAdventure/HUD/Shuriken.png" id="155_brgo4"]
+[ext_resource type="Texture2D" uid="uid://cehe8dhhryst8" path="res://NinjaAdventure/HUD/Tuto.png" id="156_de7dc"]
+[ext_resource type="Texture2D" uid="uid://2bw42xsmvi4o" path="res://NinjaAdventure/HUD/NinePathRect/DialogueBubble.png" id="157_1qn6j"]
+[ext_resource type="Texture2D" uid="uid://dr6aflhw505nf" path="res://NinjaAdventure/HUD/NinePathRect/FacesetBox.png" id="158_j4b87"]
+[ext_resource type="Texture2D" uid="uid://bef2onnaus38t" path="res://NinjaAdventure/HUD/Font/font24x30.png" id="160_guqpa"]
+[ext_resource type="Texture2D" uid="uid://bv00bhyfyc3vp" path="res://NinjaAdventure/HUD/Dialog/ChoiceBox.png" id="161_140fp"]
+[ext_resource type="Texture2D" uid="uid://3iw0ybkvwdx" path="res://NinjaAdventure/HUD/Dialog/DialogBox.png" id="162_7h5n5"]
+[ext_resource type="Texture2D" uid="uid://c0c03ihs0yl5c" path="res://NinjaAdventure/HUD/Dialog/DialogBoxFaceset.png" id="163_5fwft"]
+[ext_resource type="Texture2D" uid="uid://buab0px827kbw" path="res://NinjaAdventure/HUD/Dialog/DialogInfo.png" id="164_vc1yo"]
+[ext_resource type="Texture2D" uid="uid://cy3rjrn0ptix1" path="res://NinjaAdventure/HUD/Dialog/DialogueBoxSimple.png" id="165_77cuj"]
+[ext_resource type="Texture2D" uid="uid://jk2gcbnncst0" path="res://NinjaAdventure/HUD/Dialog/FacesetBox.png" id="166_t4xmv"]
+[ext_resource type="Texture2D" uid="uid://cup53663v3xle" path="res://NinjaAdventure/HUD/Dialog/NoButton.png" id="167_whw2q"]
+[ext_resource type="Texture2D" uid="uid://cxnvqkgjwqik4" path="res://NinjaAdventure/HUD/Dialog/YesButton.png" id="168_jbcvd"]
+[ext_resource type="Texture2D" uid="uid://7d26mocxkn8g" path="res://NinjaAdventure/Items/AllPreview.png" id="169_2ri73"]
+[ext_resource type="Texture2D" uid="uid://bn7d8x4o8ub5u" path="res://NinjaAdventure/Items/WeaponPreview2.png" id="170_nf3e8"]
+[ext_resource type="Texture2D" uid="uid://ck1r7vrfnm4xt" path="res://NinjaAdventure/preview-part-1.png" id="171_lli10"]
+[ext_resource type="Texture2D" uid="uid://blv2qg8gcka76" path="res://NinjaAdventure/preview-part-2.png" id="172_bodem"]
+[ext_resource type="Texture2D" uid="uid://gs3m67bh24or" path="res://NinjaAdventure/MusicCover.png" id="173_du044"]
+[ext_resource type="Texture2D" uid="uid://beoh3ttxdb2pg" path="res://NinjaAdventure/HUD/Font/TilesetLogic.png" id="173_lnsdw"]
+[ext_resource type="Texture2D" uid="uid://b3gafpkql84fx" path="res://Grassy_Mountains_Parallax_Background-vnitti/Grassy_Mountains-cover.png" id="174_eqegy"]
+[ext_resource type="Texture2D" uid="uid://c46aew7o6xdnx" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_front.png" id="175_7khsq"]
+[ext_resource type="Texture2D" uid="uid://biflwkp2lfyf4" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_front_t.png" id="176_d8gq2"]
+[ext_resource type="Texture2D" uid="uid://vrhng7eg58lp" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_mid.png" id="177_x48u8"]
+[ext_resource type="Texture2D" uid="uid://c3i8ihyq3ab0i" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers/clouds_mid_t.png" id="178_edc0a"]
+[ext_resource type="Texture2D" uid="uid://b4f1xraxmqi64" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers/far_mountains.png" id="179_vaww4"]
+[ext_resource type="Texture2D" uid="uid://4jkva30a5cex" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers/grassy_mountains.png" id="180_sjelq"]
+[ext_resource type="Texture2D" uid="uid://dlwt0ya0x6pcu" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers/hill.png" id="181_mxfp0"]
+[ext_resource type="Texture2D" uid="uid://3ew6w245ll2r" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers/sky.png" id="182_1ruav"]
+[ext_resource type="Texture2D" uid="uid://ir8bsey0e7v" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/sky_fc.png" id="183_ts77e"]
+[ext_resource type="Texture2D" uid="uid://dv7uxqbal34s2" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/hill.png" id="184_gltsk"]
+[ext_resource type="Texture2D" uid="uid://dk0t7nesxfgeb" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/grassy_mountains_fc.png" id="185_pw0a4"]
+[ext_resource type="Texture2D" uid="uid://drejl7xd3kfmd" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/far_mountains_fc.png" id="186_p8nle"]
+[ext_resource type="Texture2D" uid="uid://c38emg5cq4aqn" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_mid_t_fc.png" id="187_nhox4"]
+[ext_resource type="Texture2D" uid="uid://g5jkwmggu2et" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_mid_fc.png" id="188_0aeu7"]
+[ext_resource type="Texture2D" uid="uid://vmgtsgif6qsw" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_front_t_fc.png" id="189_l7q3i"]
+[ext_resource type="Texture2D" uid="uid://dtnrexhu6w5h7" path="res://Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_front_fc.png" id="190_gpucw"]
+[ext_resource type="Texture2D" uid="uid://dkguq51uvps6c" path="res://Grassy_Mountains_Parallax_Background-vnitti/Grassy_Mountains_preview.png" id="191_myofe"]
+[ext_resource type="Texture2D" uid="uid://cpe0evkstpv5p" path="res://Grassy_Mountains_Parallax_Background-vnitti/Grassy_Mountains_preview_fullcolor.png" id="192_1nd8t"]
+
+[node name="TilesetField" type="Sprite2D"]
+position = Vector2(461, 158)
+texture = ExtResource("1_0gmss")
+
+[node name="Pipes" type="Sprite2D" parent="."]
+position = Vector2(187, -97)
+texture = ExtResource("2_hnfvl")
+
+[node name="TilesetDesert" type="Sprite2D" parent="."]
+position = Vector2(223, 42)
+texture = ExtResource("3_01tff")
+
+[node name="TilesetDungeon" type="Sprite2D" parent="."]
+position = Vector2(219, 209.5)
+scale = Vector2(1.51042, 1.82812)
+texture = ExtResource("4_815ym")
+
+[node name="TilesetElement" type="Sprite2D" parent="."]
+position = Vector2(-78, 263)
+texture = ExtResource("5_myfmn")
+
+[node name="TilesetFloor" type="Sprite2D" parent="."]
+position = Vector2(253, 500)
+texture = ExtResource("6_w72l2")
+
+[node name="TilesetFloorB" type="Sprite2D" parent="."]
+position = Vector2(-107, 538)
+texture = ExtResource("7_kaim4")
+
+[node name="TilesetFloorDetail" type="Sprite2D" parent="."]
+position = Vector2(-90, 643)
+texture = ExtResource("8_5ptoa")
+
+[node name="TilesetHole" type="Sprite2D" parent="."]
+position = Vector2(-106, 731)
+texture = ExtResource("9_up4eu")
+
+[node name="TilesetHouse" type="Sprite2D" parent="."]
+position = Vector2(309, 931)
+texture = ExtResource("10_tucv6")
+
+[node name="TilesetLogic" type="Sprite2D" parent="."]
+position = Vector2(-119, 912)
+texture = ExtResource("11_by17f")
+
+[node name="TilesetNature" type="Sprite2D" parent="."]
+position = Vector2(655, 537)
+texture = ExtResource("12_5jv5b")
+
+[node name="TilesetRelief" type="Sprite2D" parent="."]
+position = Vector2(1027, 634)
+texture = ExtResource("13_isuuu")
+
+[node name="TilesetReliefDetail" type="Sprite2D" parent="."]
+position = Vector2(978, 406)
+texture = ExtResource("14_4ogul")
+
+[node name="TilesetVillageAbandoned" type="Sprite2D" parent="."]
+position = Vector2(774, 841)
+texture = ExtResource("15_m6mxs")
+
+[node name="TilesetWater" type="Sprite2D" parent="."]
+position = Vector2(737, 114)
+texture = ExtResource("16_vinbd")
+
+[node name="Elements" type="Sprite2D" parent="."]
+position = Vector2(1200, -41)
+texture = ExtResource("17_vitwj")
+
+[node name="TilesetInterior" type="Sprite2D" parent="."]
+position = Vector2(1268, 229)
+texture = ExtResource("18_bh5xe")
+
+[node name="TilesetInteriorFloor" type="Sprite2D" parent="."]
+position = Vector2(1416, 619)
+texture = ExtResource("19_judms")
+
+[node name="TilesetWallSimple" type="Sprite2D" parent="."]
+position = Vector2(1298, 913)
+texture = ExtResource("20_o71ky")
+
+[node name="Boat" type="Sprite2D" parent="."]
+position = Vector2(-286, -35)
+texture = ExtResource("21_l4vk8")
+
+[node name="Crane" type="Sprite2D" parent="."]
+position = Vector2(-318, 29)
+texture = ExtResource("22_c64y0")
+
+[node name="FishNet" type="Sprite2D" parent="."]
+position = Vector2(-237, 21)
+texture = ExtResource("23_g7kjc")
+
+[node name="FishNetFull" type="Sprite2D" parent="."]
+position = Vector2(-186, -40)
+texture = ExtResource("24_ypgoi")
+
+[node name="Sail" type="Sprite2D" parent="."]
+position = Vector2(-298, 121)
+texture = ExtResource("25_s6tjj")
+
+[node name="Faceset2" type="Sprite2D" parent="."]
+position = Vector2(551, -380)
+texture = ExtResource("26_flcqa")
+
+[node name="SpriteSheet2" type="Sprite2D" parent="."]
+position = Vector2(558, -288)
+texture = ExtResource("27_u567u")
+
+[node name="Faceset" type="Sprite2D" parent="."]
+position = Vector2(667, -384)
+texture = ExtResource("28_wodhh")
+
+[node name="SpriteSheet" type="Sprite2D" parent="."]
+position = Vector2(671, -287)
+texture = ExtResource("29_ukwxj")
+
+[node name="SpriteSheet3" type="Sprite2D" parent="."]
+position = Vector2(769, -285)
+texture = ExtResource("30_oiflv")
+
+[node name="Faceset3" type="Sprite2D" parent="."]
+position = Vector2(773, -390)
+texture = ExtResource("31_7m2r7")
+
+[node name="Faceset4" type="Sprite2D" parent="."]
+position = Vector2(883, -387)
+texture = ExtResource("32_env0q")
+
+[node name="SpriteSheet4" type="Sprite2D" parent="."]
+position = Vector2(885, -286)
+texture = ExtResource("33_vp2e4")
+
+[node name="SpriteSheet5" type="Sprite2D" parent="."]
+position = Vector2(989, -288)
+texture = ExtResource("34_5ic4v")
+
+[node name="Faceset5" type="Sprite2D" parent="."]
+position = Vector2(999, -390)
+texture = ExtResource("35_di0f7")
+
+[node name="SpriteSheet6" type="Sprite2D" parent="."]
+position = Vector2(1084, -288)
+texture = ExtResource("36_qloab")
+
+[node name="Faceset6" type="Sprite2D" parent="."]
+position = Vector2(1089, -394)
+texture = ExtResource("37_igpgc")
+
+[node name="SpriteSheet7" type="Sprite2D" parent="."]
+position = Vector2(1172, -289)
+texture = ExtResource("38_e7g6p")
+
+[node name="Faceset7" type="Sprite2D" parent="."]
+position = Vector2(1170, -391)
+texture = ExtResource("39_ukjfd")
+
+[node name="SpriteSheet8" type="Sprite2D" parent="."]
+position = Vector2(1266, -285)
+texture = ExtResource("40_nnqyu")
+
+[node name="Faceset8" type="Sprite2D" parent="."]
+position = Vector2(1254, -389)
+texture = ExtResource("41_cjeai")
+
+[node name="SpriteSheet9" type="Sprite2D" parent="."]
+position = Vector2(1371, -284)
+texture = ExtResource("42_x8ipj")
+
+[node name="Faceset9" type="Sprite2D" parent="."]
+position = Vector2(1372, -390)
+texture = ExtResource("43_dbqof")
+
+[node name="SpriteSheet10" type="Sprite2D" parent="."]
+position = Vector2(558, -560)
+texture = ExtResource("44_7i4bk")
+
+[node name="Faceset10" type="Sprite2D" parent="."]
+position = Vector2(551, -622)
+texture = ExtResource("45_x2hfp")
+
+[node name="SpriteSheet11" type="Sprite2D" parent="."]
+position = Vector2(674, -517)
+texture = ExtResource("46_3j6nb")
+
+[node name="Faceset11" type="Sprite2D" parent="."]
+position = Vector2(667, -616)
+texture = ExtResource("47_6i8op")
+
+[node name="SpriteSheet12" type="Sprite2D" parent="."]
+position = Vector2(776, -514)
+texture = ExtResource("48_wya7f")
+
+[node name="Faceset12" type="Sprite2D" parent="."]
+position = Vector2(771, -624)
+texture = ExtResource("49_p23a0")
+
+[node name="SpriteSheet13" type="Sprite2D" parent="."]
+position = Vector2(881, -508)
+texture = ExtResource("50_3srgr")
+
+[node name="Faceset13" type="Sprite2D" parent="."]
+position = Vector2(878, -627)
+texture = ExtResource("51_4b7ue")
+
+[node name="SpriteSheet14" type="Sprite2D" parent="."]
+position = Vector2(1001, -506)
+texture = ExtResource("52_8b27a")
+
+[node name="Faceset14" type="Sprite2D" parent="."]
+position = Vector2(997, -624)
+texture = ExtResource("53_ch1q7")
+
+[node name="SpriteSheet15" type="Sprite2D" parent="."]
+position = Vector2(1087, -510)
+texture = ExtResource("54_61154")
+
+[node name="Faceset15" type="Sprite2D" parent="."]
+position = Vector2(1085, -621)
+texture = ExtResource("55_dtnqi")
+
+[node name="Faceset16" type="Sprite2D" parent="."]
+position = Vector2(1171, -620)
+texture = ExtResource("56_ap5rg")
+
+[node name="SpriteSheet16" type="Sprite2D" parent="."]
+position = Vector2(1177, -513)
+texture = ExtResource("57_ykmux")
+
+[node name="SpriteSheet17" type="Sprite2D" parent="."]
+position = Vector2(1271, -504)
+texture = ExtResource("58_c478j")
+
+[node name="Faceset17" type="Sprite2D" parent="."]
+position = Vector2(1269, -623)
+texture = ExtResource("59_ya46p")
+
+[node name="Faceset18" type="Sprite2D" parent="."]
+position = Vector2(1379, -615)
+texture = ExtResource("60_uxurw")
+
+[node name="SpriteSheet18" type="Sprite2D" parent="."]
+position = Vector2(1377, -503)
+texture = ExtResource("61_a6cn2")
+
+[node name="Faceset19" type="Sprite2D" parent="."]
+position = Vector2(561, -858)
+texture = ExtResource("62_l8s5o")
+
+[node name="SpriteSheet19" type="Sprite2D" parent="."]
+position = Vector2(561, -751)
+texture = ExtResource("63_wkk2n")
+
+[node name="Faceset20" type="Sprite2D" parent="."]
+position = Vector2(682, -873)
+texture = ExtResource("64_is6na")
+
+[node name="SpriteSheet20" type="Sprite2D" parent="."]
+position = Vector2(678, -755)
+texture = ExtResource("65_wcmq3")
+
+[node name="Faceset21" type="Sprite2D" parent="."]
+position = Vector2(786, -875)
+texture = ExtResource("66_km5f2")
+
+[node name="SpriteSheet21" type="Sprite2D" parent="."]
+position = Vector2(784, -766)
+texture = ExtResource("67_vv1w3")
+
+[node name="Faceset22" type="Sprite2D" parent="."]
+position = Vector2(884, -876)
+texture = ExtResource("68_3cyyc")
+
+[node name="SpriteSheet22" type="Sprite2D" parent="."]
+position = Vector2(884, -761)
+texture = ExtResource("69_iwg51")
+
+[node name="Faceset23" type="Sprite2D" parent="."]
+position = Vector2(984, -872)
+texture = ExtResource("70_26i4p")
+
+[node name="SpriteSheet23" type="Sprite2D" parent="."]
+position = Vector2(988, -764)
+texture = ExtResource("71_ng2p0")
+
+[node name="Faceset24" type="Sprite2D" parent="."]
+position = Vector2(1079, -871)
+texture = ExtResource("72_s6hmt")
+
+[node name="SpriteSheet24" type="Sprite2D" parent="."]
+position = Vector2(1085, -768)
+texture = ExtResource("73_tw2na")
+
+[node name="Faceset25" type="Sprite2D" parent="."]
+position = Vector2(1180, -869)
+texture = ExtResource("74_iieyd")
+
+[node name="SpriteSheet25" type="Sprite2D" parent="."]
+position = Vector2(1185, -770)
+texture = ExtResource("75_v4rfw")
+
+[node name="SpriteSheet26" type="Sprite2D" parent="."]
+position = Vector2(1269, -769)
+texture = ExtResource("76_dsitq")
+
+[node name="Faceset26" type="Sprite2D" parent="."]
+position = Vector2(1270, -877)
+texture = ExtResource("77_cx42u")
+
+[node name="Faceset27" type="Sprite2D" parent="."]
+position = Vector2(1366, -872)
+texture = ExtResource("78_vql2v")
+
+[node name="Redsamurai" type="Sprite2D" parent="."]
+position = Vector2(1371, -774)
+texture = ExtResource("79_4wlpg")
+
+[node name="Faceset28" type="Sprite2D" parent="."]
+position = Vector2(1370, -1089)
+texture = ExtResource("80_cn40i")
+
+[node name="SpriteSheet27" type="Sprite2D" parent="."]
+position = Vector2(1369, -994)
+texture = ExtResource("81_6in33")
+
+[node name="Faceset29" type="Sprite2D" parent="."]
+position = Vector2(1263, -1101)
+texture = ExtResource("82_ds187")
+
+[node name="SpriteSheet28" type="Sprite2D" parent="."]
+position = Vector2(1267, -998)
+texture = ExtResource("83_31421")
+
+[node name="Faceset30" type="Sprite2D" parent="."]
+position = Vector2(1162, -1103)
+texture = ExtResource("84_rovjf")
+
+[node name="SpriteSheet29" type="Sprite2D" parent="."]
+position = Vector2(1170, -993)
+texture = ExtResource("85_qd80v")
+
+[node name="Faceset31" type="Sprite2D" parent="."]
+position = Vector2(1080, -1102)
+texture = ExtResource("86_ikjml")
+
+[node name="SpriteSheet30" type="Sprite2D" parent="."]
+position = Vector2(1087, -997)
+texture = ExtResource("87_svx5n")
+
+[node name="Faceset32" type="Sprite2D" parent="."]
+position = Vector2(982, -1101)
+texture = ExtResource("88_12n3x")
+
+[node name="SpriteSheet31" type="Sprite2D" parent="."]
+position = Vector2(985, -996)
+texture = ExtResource("89_snbnb")
+
+[node name="SpriteSheet32" type="Sprite2D" parent="."]
+position = Vector2(893, -1002)
+texture = ExtResource("90_voxl4")
+
+[node name="Faceset33" type="Sprite2D" parent="."]
+position = Vector2(891, -1111)
+texture = ExtResource("91_qq0xu")
+
+[node name="Faceset34" type="Sprite2D" parent="."]
+position = Vector2(790, -1114)
+texture = ExtResource("92_1j8fq")
+
+[node name="SpriteSheet33" type="Sprite2D" parent="."]
+position = Vector2(796, -1003)
+texture = ExtResource("93_a474e")
+
+[node name="Faceset35" type="Sprite2D" parent="."]
+position = Vector2(392, -407)
+texture = ExtResource("94_tegmn")
+
+[node name="Hit" type="Sprite2D" parent="."]
+position = Vector2(345, -341)
+texture = ExtResource("95_rowvr")
+
+[node name="Idle" type="Sprite2D" parent="."]
+position = Vector2(298, -291)
+texture = ExtResource("96_qsx4w")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(396, -239)
+texture = ExtResource("97_pd64i")
+
+[node name="Walk" type="Sprite2D" parent="."]
+position = Vector2(276, -188)
+texture = ExtResource("98_ab3cy")
+
+[node name="Faceset36" type="Sprite2D" parent="."]
+position = Vector2(79, -430)
+texture = ExtResource("99_yqxi3")
+
+[node name="Hit2" type="Sprite2D" parent="."]
+position = Vector2(31, -365)
+texture = ExtResource("100_ai2vo")
+
+[node name="Idle2" type="Sprite2D" parent="."]
+position = Vector2(-5, -292)
+texture = ExtResource("101_l08fp")
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(95, -237)
+texture = ExtResource("102_7g2ek")
+
+[node name="Walk2" type="Sprite2D" parent="."]
+position = Vector2(-29, -186)
+texture = ExtResource("103_8bvcw")
+
+[node name="Faceset37" type="Sprite2D" parent="."]
+position = Vector2(-216, -472)
+texture = ExtResource("104_t1f2u")
+
+[node name="Hit3" type="Sprite2D" parent="."]
+position = Vector2(-267, -417)
+texture = ExtResource("105_rfrpm")
+
+[node name="Idle3" type="Sprite2D" parent="."]
+position = Vector2(-312, -194)
+texture = ExtResource("106_hlcsn")
+
+[node name="Attack" type="Sprite2D" parent="."]
+position = Vector2(-227, -683)
+texture = ExtResource("107_s3kgf")
+
+[node name="Charge" type="Sprite2D" parent="."]
+position = Vector2(-302, -636)
+texture = ExtResource("108_w13vi")
+
+[node name="Faceset38" type="Sprite2D" parent="."]
+position = Vector2(-186, -790)
+texture = ExtResource("109_jg4j0")
+
+[node name="Hit4" type="Sprite2D" parent="."]
+position = Vector2(-231, -731)
+texture = ExtResource("110_m1kco")
+
+[node name="Idle40x40" type="Sprite2D" parent="."]
+position = Vector2(-258, -548)
+texture = ExtResource("111_vqfwv")
+
+[node name="Jump" type="Sprite2D" parent="."]
+position = Vector2(-279, -595)
+texture = ExtResource("112_7ed2t")
+
+[node name="Faceset39" type="Sprite2D" parent="."]
+position = Vector2(184, -861)
+texture = ExtResource("113_er0qq")
+
+[node name="Idle4" type="Sprite2D" parent="."]
+position = Vector2(44, -549)
+texture = ExtResource("114_o3ht0")
+
+[node name="Jump2" type="Sprite2D" parent="."]
+position = Vector2(75, -611)
+texture = ExtResource("115_kwyw4")
+
+[node name="Sprite3" type="Sprite2D" parent="."]
+position = Vector2(191, -674)
+texture = ExtResource("116_k8sir")
+
+[node name="Charge2" type="Sprite2D" parent="."]
+position = Vector2(159, -735)
+texture = ExtResource("117_hghvr")
+
+[node name="Attack2" type="Sprite2D" parent="."]
+position = Vector2(102, -796)
+texture = ExtResource("118_ujmet")
+
+[node name="Idle5" type="Sprite2D" parent="."]
+position = Vector2(368, -556)
+texture = ExtResource("119_n06vr")
+
+[node name="Hit5" type="Sprite2D" parent="."]
+position = Vector2(415, -799)
+texture = ExtResource("120_3y5yf")
+
+[node name="Faceset40" type="Sprite2D" parent="."]
+position = Vector2(470, -869)
+texture = ExtResource("121_11gpn")
+
+[node name="SpriteSheet34" type="Sprite2D" parent="."]
+position = Vector2(451, -980)
+texture = ExtResource("122_cwxkq")
+
+[node name="Faceset41" type="Sprite2D" parent="."]
+position = Vector2(467, -1065)
+texture = ExtResource("123_h156l")
+
+[node name="SpriteSheet35" type="Sprite2D" parent="."]
+position = Vector2(306, -982)
+texture = ExtResource("124_ree6d")
+
+[node name="Faceset42" type="Sprite2D" parent="."]
+position = Vector2(317, -1062)
+texture = ExtResource("125_1qyka")
+
+[node name="Faceset43" type="Sprite2D" parent="."]
+position = Vector2(170, -1074)
+texture = ExtResource("126_rqy45")
+
+[node name="SpriteSheet36" type="Sprite2D" parent="."]
+position = Vector2(161, -986)
+texture = ExtResource("127_deu70")
+
+[node name="Faceset44" type="Sprite2D" parent="."]
+position = Vector2(20, -1080)
+texture = ExtResource("128_s7ld0")
+
+[node name="Eye2" type="Sprite2D" parent="."]
+position = Vector2(26, -1004)
+texture = ExtResource("129_ex4dc")
+
+[node name="Faceset45" type="Sprite2D" parent="."]
+position = Vector2(-121, -1085)
+texture = ExtResource("130_ss1fi")
+
+[node name="SpriteSheet37" type="Sprite2D" parent="."]
+position = Vector2(-124, -1016)
+texture = ExtResource("131_x2xpi")
+
+[node name="SpriteSheet38" type="Sprite2D" parent="."]
+position = Vector2(-250, -1015)
+texture = ExtResource("132_ti4y2")
+
+[node name="Faceset46" type="Sprite2D" parent="."]
+position = Vector2(-237, -1094)
+texture = ExtResource("133_aty01")
+
+[node name="Faceset47" type="Sprite2D" parent="."]
+position = Vector2(-363, -1098)
+texture = ExtResource("134_msfke")
+
+[node name="Slime4" type="Sprite2D" parent="."]
+position = Vector2(-378, -1031)
+texture = ExtResource("135_ks21x")
+
+[node name="Reptile" type="Sprite2D" parent="."]
+position = Vector2(-380, -1189)
+texture = ExtResource("136_ubp60")
+
+[node name="Faceset48" type="Sprite2D" parent="."]
+position = Vector2(-367, -1256)
+texture = ExtResource("137_bo0j5")
+
+[node name="Faceset49" type="Sprite2D" parent="."]
+position = Vector2(-230, -1265)
+texture = ExtResource("138_64jo6")
+
+[node name="Owl" type="Sprite2D" parent="."]
+position = Vector2(-237, -1193)
+texture = ExtResource("139_p6j06")
+
+[node name="Faceset50" type="Sprite2D" parent="."]
+position = Vector2(-112, -1270)
+texture = ExtResource("140_76kp4")
+
+[node name="Mushroom" type="Sprite2D" parent="."]
+position = Vector2(-126, -1195)
+texture = ExtResource("141_p77nl")
+
+[node name="Faceset51" type="Sprite2D" parent="."]
+position = Vector2(27, -1279)
+texture = ExtResource("142_hg0re")
+
+[node name="Mollusc" type="Sprite2D" parent="."]
+position = Vector2(13, -1204)
+texture = ExtResource("143_7oxxi")
+
+[node name="Faceset52" type="Sprite2D" parent="."]
+position = Vector2(175, -1282)
+texture = ExtResource("144_ljsr0")
+
+[node name="SpriteSheet39" type="Sprite2D" parent="."]
+position = Vector2(165, -1209)
+texture = ExtResource("145_frt75")
+
+[node name="Faceset53" type="Sprite2D" parent="."]
+position = Vector2(324, -1284)
+texture = ExtResource("146_v51xm")
+
+[node name="SpriteSheet40" type="Sprite2D" parent="."]
+position = Vector2(314, -1211)
+texture = ExtResource("147_8o10g")
+
+[node name="Faceset54" type="Sprite2D" parent="."]
+position = Vector2(478, -1284)
+texture = ExtResource("148_oe7y2")
+
+[node name="SpriteSheet41" type="Sprite2D" parent="."]
+position = Vector2(469, -1211)
+texture = ExtResource("149_bhbyi")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(-504, -118)
+texture = ExtResource("150_ns6yr")
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(-577, -120)
+texture = ExtResource("151_4gjwx")
+
+[node name="Kunai" type="Sprite2D" parent="."]
+position = Vector2(-508, -81)
+texture = ExtResource("152_huyqh")
+
+[node name="LifeBarMiniProgress" type="Sprite2D" parent="."]
+position = Vector2(-589, -97)
+texture = ExtResource("153_m1r7s")
+
+[node name="LifeBarMiniUnder" type="Sprite2D" parent="."]
+position = Vector2(-623, -97)
+texture = ExtResource("154_nursh")
+
+[node name="Shuriken" type="Sprite2D" parent="."]
+position = Vector2(-508, -59)
+texture = ExtResource("155_brgo4")
+
+[node name="Tuto" type="Sprite2D" parent="."]
+position = Vector2(-610, 52)
+texture = ExtResource("156_de7dc")
+
+[node name="DialogueBubble" type="Sprite2D" parent="."]
+position = Vector2(-765, -86)
+texture = ExtResource("157_1qn6j")
+
+[node name="FacesetBox" type="Sprite2D" parent="."]
+position = Vector2(-806, -24)
+texture = ExtResource("158_j4b87")
+
+[node name="Font8x8" type="Sprite2D" parent="."]
+position = Vector2(-578, 192)
+
+[node name="Font24x30" type="Sprite2D" parent="."]
+position = Vector2(-683, 381)
+texture = ExtResource("160_guqpa")
+
+[node name="ChoiceBox" type="Sprite2D" parent="."]
+position = Vector2(-911, 41)
+texture = ExtResource("161_140fp")
+
+[node name="DialogBox" type="Sprite2D" parent="."]
+position = Vector2(-1029, 108)
+scale = Vector2(1.03448, 1.03448)
+texture = ExtResource("162_7h5n5")
+
+[node name="DialogBoxFaceset" type="Sprite2D" parent="."]
+position = Vector2(-1027, 175.5)
+scale = Vector2(1.03333, 0.982759)
+texture = ExtResource("163_5fwft")
+
+[node name="DialogInfo" type="Sprite2D" parent="."]
+position = Vector2(-1016, 39)
+texture = ExtResource("164_vc1yo")
+
+[node name="DialogueBoxSimple" type="Sprite2D" parent="."]
+position = Vector2(-1025, 246)
+texture = ExtResource("165_77cuj")
+
+[node name="FacesetBox2" type="Sprite2D" parent="."]
+position = Vector2(-1152, 35)
+texture = ExtResource("166_t4xmv")
+
+[node name="NoButton" type="Sprite2D" parent="."]
+position = Vector2(-1164, 302)
+texture = ExtResource("167_whw2q")
+
+[node name="YesButton" type="Sprite2D" parent="."]
+position = Vector2(-1124, 300)
+texture = ExtResource("168_jbcvd")
+
+[node name="AllPreview" type="Sprite2D" parent="."]
+position = Vector2(-990, 414)
+texture = ExtResource("169_2ri73")
+
+[node name="WeaponPreview2" type="Sprite2D" parent="."]
+position = Vector2(-1166, 358)
+texture = ExtResource("170_nf3e8")
+
+[node name="Preview-part-1" type="Sprite2D" parent="."]
+position = Vector2(-824.25, 741)
+scale = Vector2(1.00234, 1)
+texture = ExtResource("171_lli10")
+
+[node name="Preview-part-2" type="Sprite2D" parent="."]
+position = Vector2(-825, 1190)
+texture = ExtResource("172_bodem")
+
+[node name="MusicCover" type="Sprite2D" parent="."]
+position = Vector2(-1417, 1188)
+texture = ExtResource("173_du044")
+
+[node name="TilesetLogic2" type="Sprite2D" parent="."]
+position = Vector2(1928, -638)
+texture = ExtResource("173_lnsdw")
+
+[node name="GrassyMountains-cover" type="Sprite2D" parent="."]
+position = Vector2(495, 1689)
+texture = ExtResource("174_eqegy")
+
+[node name="CloudsFront" type="Sprite2D" parent="."]
+position = Vector2(963, 1515)
+texture = ExtResource("175_7khsq")
+
+[node name="CloudsFrontT" type="Sprite2D" parent="."]
+position = Vector2(961, 1731)
+texture = ExtResource("176_d8gq2")
+
+[node name="CloudsMid" type="Sprite2D" parent="."]
+position = Vector2(964, 1947)
+texture = ExtResource("177_x48u8")
+
+[node name="CloudsMidT" type="Sprite2D" parent="."]
+position = Vector2(964, 2164)
+texture = ExtResource("178_edc0a")
+
+[node name="FarMountains" type="Sprite2D" parent="."]
+position = Vector2(965, 2380)
+texture = ExtResource("179_vaww4")
+
+[node name="GrassyMountains" type="Sprite2D" parent="."]
+position = Vector2(966, 2598)
+texture = ExtResource("180_sjelq")
+
+[node name="Hill" type="Sprite2D" parent="."]
+position = Vector2(965, 2815)
+texture = ExtResource("181_mxfp0")
+
+[node name="Sky" type="Sprite2D" parent="."]
+position = Vector2(962, 3031)
+texture = ExtResource("182_1ruav")
+
+[node name="SkyFc" type="Sprite2D" parent="."]
+position = Vector2(1426, 3040)
+texture = ExtResource("183_ts77e")
+
+[node name="Hill2" type="Sprite2D" parent="."]
+position = Vector2(1425, 2825)
+texture = ExtResource("184_gltsk")
+
+[node name="GrassyMountainsFc" type="Sprite2D" parent="."]
+position = Vector2(1461, 2591)
+texture = ExtResource("185_pw0a4")
+
+[node name="FarMountainsFc" type="Sprite2D" parent="."]
+position = Vector2(1463, 2376)
+texture = ExtResource("186_p8nle")
+
+[node name="CloudsMidTFc" type="Sprite2D" parent="."]
+position = Vector2(1470, 2164)
+texture = ExtResource("187_nhox4")
+
+[node name="CloudsMidFc" type="Sprite2D" parent="."]
+position = Vector2(1468, 1931)
+texture = ExtResource("188_0aeu7")
+
+[node name="CloudsFrontTFc" type="Sprite2D" parent="."]
+position = Vector2(1477, 1718)
+texture = ExtResource("189_l7q3i")
+
+[node name="CloudsFrontFc" type="Sprite2D" parent="."]
+position = Vector2(1463, 1504)
+texture = ExtResource("190_gpucw")
+
+[node name="GrassyMountainsPreview" type="Sprite2D" parent="."]
+position = Vector2(957, 1383)
+texture = ExtResource("191_myofe")
+
+[node name="GrassyMountainsPreviewFullcolor" type="Sprite2D" parent="."]
+position = Vector2(1462, 1377)
+texture = ExtResource("192_1nd8t")

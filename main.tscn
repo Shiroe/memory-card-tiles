@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=3 uid="uid://b15n6mc832eta"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rpixr"]
+[ext_resource type="FontFile" uid="uid://btg01hb56bcda" path="res://NinjaAdventure/HUD/Font/NormalFont.ttf" id="1_ye25n"]
+[ext_resource type="PackedScene" uid="uid://bj28lffx1pm6" path="res://scenes/BG_parallax.tscn" id="2_3inde"]
+[ext_resource type="Texture2D" uid="uid://bv00bhyfyc3vp" path="res://NinjaAdventure/HUD/Dialog/ChoiceBox.png" id="9_s76l5"]
+[ext_resource type="Texture2D" uid="uid://d3tcttehtp2wc" path="res://NinjaAdventure/HUD/Dialog/ChoiceBox-pressed.png" id="10_3qoeq"]
+
+[node name="MainScreen" type="Node2D"]
+script = ExtResource("1_rpixr")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_3inde")]
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(1150, 648)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1150.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 16.0
+offset_right = 1150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.882353, 0.356863, 0.439216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ye25n")
+theme_override_font_sizes/font_size = 60
+text = "Memory Tiles"
+horizontal_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 104.0
+offset_bottom = -214.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/BoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayBtn" type="TextureButton" parent="Control/BoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+texture_normal = ExtResource("9_s76l5")
+texture_pressed = ExtResource("10_3qoeq")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Control/BoxContainer/HBoxContainer/VBoxContainer/PlayBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.364706, 0.368627, 1)
+theme_override_fonts/font = ExtResource("1_ye25n")
+theme_override_font_sizes/font_size = 16
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="QuitBtn" type="TextureButton" parent="Control/BoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 40)
+layout_mode = 2
+texture_normal = ExtResource("9_s76l5")
+texture_pressed = ExtResource("10_3qoeq")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Control/BoxContainer/HBoxContainer/VBoxContainer/QuitBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.364706, 0.368627, 1)
+theme_override_fonts/font = ExtResource("1_ye25n")
+theme_override_font_sizes/font_size = 16
+text = "Quit
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[connection signal="pressed" from="Control/BoxContainer/HBoxContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="Control/BoxContainer/HBoxContainer/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
