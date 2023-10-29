@@ -118,5 +118,7 @@ func resetRevealedCards():
 
 func checkGameOver():
 	if pairsFound == totalPairs:
-		get_tree().change_scene_to_file("res://scenes/LevelSelection.tscn");
+		Game.statistics.level = levelIdx;
+		Game.statistics.moves = movesTaken;
+		get_tree().change_scene_to_file("res://scenes/score_screen.tscn");
 
