@@ -64,8 +64,8 @@ func findNumbersWithAspectRatios(_rangeStart: float, _rangeEnd: float, _minRatio
 				if _minRatio <= variantRC and variantRC <= _maxRatio and not variantRC == variantCR:
 					var entry = {}
 					entry.number = number;
-					entry.width = rows;
-					entry.height = columns;
+					entry.rows = rows; # rows in height (each row adds to the total height)
+					entry.columns = columns; # each column adds to the total width (all cards are fixed size)
 					entry.aspectRatio = float(rows / columns);
 					validNumbers.append(entry);
 					
@@ -73,8 +73,8 @@ func findNumbersWithAspectRatios(_rangeStart: float, _rangeEnd: float, _minRatio
 				if _minRatio <= variantCR and variantCR <= _maxRatio:
 					var entry = {}
 					entry.number = number;
-					entry.width = columns;
-					entry.height = rows;
+					entry.rows = columns;
+					entry.columns = rows;
 					entry.aspectRatio = float(columns / rows);
 					validNumbers.append(entry);
 		#print('|')

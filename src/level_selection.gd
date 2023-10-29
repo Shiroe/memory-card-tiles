@@ -55,12 +55,11 @@ func setupGridLevels():
 		buttonWithTexture.pressed.connect(func(): selectLevel(idx, level))
 
 		# Set label styles and text
-		label.text = str(level.number)
+		label.text = str(idx)
 		#label.position.x += 2
 		#label.position.y = 3
 		label.set_position(Vector2(2, 3))
 		var fontSize = floor((gridContainer.size.x / 6 ) * 0.25) + 5
-		print('FSIZE: ', fontSize, ' : ', buttonWithTexture.size)
 		
 		label.add_theme_font_override('font', load('res://NinjaAdventure/NormalFont.ttf'))
 		label.add_theme_font_size_override('font_size', fontSize)

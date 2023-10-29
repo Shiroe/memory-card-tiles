@@ -3,23 +3,24 @@ extends Node2D
 var level: Dictionary = {};
 var levelIdx: int = 0;
 
+
+@onready var movesLabel = $HUD/HBoxContainer/VBoxContainer/Moves as Label
+@onready var pairsFoundLabel = $HUD/HBoxContainer/VBoxContainer/PairsFound as Label
 @onready var levelLabel = $HUD/HBoxContainer/VBoxContainer/Label as Label
-@onready var tileCard: PackedScene = load("res://scenes/Tile_Card.tscn")
+@onready var cardButton: PackedScene = load("res://scenes/TileCardButton.tscn");
 @onready var grid = $HUD/Control/GridContainer as GridContainer
-@onready var faces := [
-	preload('res://NinjaAdventure/Actor/Characters/BlackNinjaMage/Faceset.png'), 
-	preload('res://NinjaAdventure/Actor/Characters/BlackSorcerer/Faceset.png'), 
-	preload('res://NinjaAdventure/Actor/Characters/BlueNinja/Faceset.png'), 
-	preload('res://NinjaAdventure/Actor/Characters/BlueSamurai/Faceset.png'), 
-	preload('res://NinjaAdventure/Actor/Characters/Cavegirl2/Faceset.png'), 
-	preload('res://NinjaAdventure/Actor/Animals/Cat/Faceset.png')
-] as Array[Texture2D]
 
 var isRevealed = false;
+var cardsInRevelation: Array = []; 
+
+var movesTaken = 0;
+var pairsFound = 0;
+var totalPairs = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initializeLevel()
+	pairsFoundLabel.text = "Pairs: " + str(pairsFound) + "/" + str(totalPairs);
 	print("Starting level: \n", level)
 
 
@@ -27,7 +28,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-	#test.rotate(delta)
 
 
 
@@ -38,75 +38,85 @@ func initializeLevel():
 	# get card textures
 	var files = [];
 	Utils.get_all_files('res://NinjaAdventure/Actor/', files, ['png'])
-	#print('FILES: \n', files);
 	
 	# setup HUD
 	levelLabel.text = "Level:  " + str(levelIdx)
 	
-	# setup cards
-	var gridRect = grid.get_global_rect()
-	print('grid rect: ', gridRect.position)
-	print('grid pos: ', gridRect)
-	var xx = float(floor(grid.global_position.x))
-	var xy = float(floor(grid.global_position.x + gridRect.size.x))
-	var yx = float(floor(grid.global_position.y))
-	var yy = float(floor(grid.global_position.y + gridRect.size.y))
-	print('xx: ', xx, ' | xy: ', xy, ' | yx: ', yx, ' yy: ', yy)
+	totalPairs = level.number / 2
+	
+	# setup grid based on columns to separate
+	grid.columns = level.columns
+	
+	# setup card pool
 	var cards: Array = files.slice(0, level.number / 2)
 	cards = cards + cards
 	cards.shuffle()
 	print('cards size', cards.size())
-	print('Viewport: ', get_viewport().size)
-	var viewport = get_viewport().size
+	
+	# get card back texture to re-use
+	var cardBackText = Texture.new();
+	cardBackText = load('res://NinjaAdventure/HUD/Dialog/card-back.png');
+	
 	for card in range(0, cards.size()):
+		# get specific card from pool
 		var texture = load(cards[card]) as Texture2D
-		var gutter = 5
-		var scale = 1
-		var textureSize = texture.get_size().x
-		var temp = tileCard.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
-		print('textSize:- ', textureSize)
-		#temp = Vector2(scale, scale)
-		var pos = Vector2(
-			(((textureSize * scale) + gutter) * int(card % int(level.width))) - (textureSize * scale),
-			(((textureSize * scale) + gutter) * int(card % int(level.height))) - (textureSize * scale)
-		)
-		print('children', temp.get_children(true)[0])
 		
-		temp.get_children(true)[0].texture = load(cards[card]);
-		grid.add_child(temp)
-		grid.get_child(card).position = pos #Vector2((38. * card * 2.0) - (38. * 2.), 0.)
-
-
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			pass
-			#print('pos', testsprite.global_position)
-			#isWithin(testsprite, event.position)
-			#if isWithin(testsprite, event.position):
-				#print("A click!", testsprite.position)
-				
-				#var tween = create_tween()
-				#if not isRevealed:
-					#tween.tween_property(shaderMat, 'shader_parameter/reveal_progress', 1, 1)
-				#else:
-					#tween.tween_property(shaderMat, 'shader_parameter/reveal_progress', 0, 1)
-				#isRevealed = !isRevealed
+		var cardButtonElement = cardButton.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE);
+		cardButtonElement.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND;
+		
+		var cardText = Texture.new();
+		cardText = load(cards[card]);
+		cardButtonElement.cardTexture = cardText;
+		
+		cardButtonElement.pressed.connect(func(): onCardPress(cardButtonElement))
+		
+		grid.add_child(cardButtonElement);
 
 
 
-func isWithin(sprite: Sprite2D, mouseLocation):
-	#print('relative: ', )
-
-	var size = { x= 38, y= 38 }
-	var pos = sprite.global_position
-	var xL = pos.x - (size.x / 2.0)
-	var xR = pos.x + (size.x / 2.0)
-	var yL = pos.y - (size.y / 2.0)
-	var yR = pos.y + (size.y / 2.0)
-	print('xL: ', xL, ' xR: ', xR, ' yL: ', yL, ' yR: ', yR)
-	print("is within ", xL <= mouseLocation.x && xR >= mouseLocation.x && yL <= mouseLocation.y && yR >= mouseLocation.y)
-	print('MOUSE POS:- ', mouseLocation.x, ', ', mouseLocation.y)
-	return xL <= mouseLocation.x && xR >= mouseLocation.x && yL <= mouseLocation.y && yR >= mouseLocation.y
+func onCardPress(card):
+	print("Pressed card:", card);
+	if cardsInRevelation.size() == 2:
+		pass
+	elif card.isRevealed or card.isFound:
+		pass
+	else:
+		card.isRevealed = true;
+		cardsInRevelation.append(card);
+		if cardsInRevelation.size() == 2:
+			checkIfFound()
 	
-	
+
+
+func checkIfFound():
+	print("Currect selection ", cardsInRevelation);
+	if cardsInRevelation[0].cardTexture == cardsInRevelation[1].cardTexture:
+		cardsInRevelation[0].isFound = true;
+		cardsInRevelation[1].isFound = true;
+		cardsInRevelation.clear();
+		pairsFound += 1;
+		pairsFoundLabel.text = "Pairs: " + str(pairsFound) + "/" + str(totalPairs)
+		checkGameOver();
+	else:
+		await get_tree().create_timer(1.0).timeout
+		#var timer = Timer.new();
+		#timer.wait_time = 3.0;
+		#timer.start()
+		#timer.connect('timeout', func(): resetRevealedCards())
+		resetRevealedCards()
+
+	print('\n cards in revelation: ',  cardsInRevelation);
+	movesTaken += 1;
+	movesLabel.text = "Moves: " + str(movesTaken);
+
+
+func resetRevealedCards():
+	cardsInRevelation[0].isRevealed = false;
+	cardsInRevelation[1].isRevealed = false;
+	cardsInRevelation.clear();
+
+
+func checkGameOver():
+	if pairsFound == totalPairs:
+		get_tree().change_scene_to_file("res://scenes/LevelSelection.tscn");
+

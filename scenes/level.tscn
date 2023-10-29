@@ -45,6 +45,26 @@ theme_override_fonts/font = ExtResource("3_30mun")
 theme_override_font_sizes/font_size = 32
 text = "Level: 1"
 
+[node name="Moves" type="Label" parent="HUD/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.854902, 0.850996, 0.415717, 1)
+theme_override_colors/font_shadow_color = Color(0.290166, 0.431357, 0.466529, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("3_30mun")
+theme_override_font_sizes/font_size = 32
+text = "Moves: 0"
+
+[node name="PairsFound" type="Label" parent="HUD/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.854902, 0.850996, 0.415717, 1)
+theme_override_colors/font_shadow_color = Color(0.290166, 0.431357, 0.466529, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("3_30mun")
+theme_override_font_sizes/font_size = 32
+text = "Pairs: 0/0"
+
 [node name="Control" type="Control" parent="HUD"]
 custom_minimum_size = Vector2(700, 400)
 layout_mode = 1
@@ -71,5 +91,5 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(350, 200)
 mouse_default_cursor_shape = 2
-columns = 4
+columns = 6
 metadata/_edit_use_anchors_ = true
